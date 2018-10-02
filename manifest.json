@@ -3,7 +3,7 @@
   "short_name": "Qrcode",
   "theme_color": "#2196f3",
   "background_color": "#21ebf3",
-  "display": "fullscreen",
+  "display": "stadalone",
   "orientation": "portrait",
   "Scope": "/",
   "start_url": "/https://eloquent-khorana-24ae17.netlify.com/leitor-qrcode/qrcode.html",
