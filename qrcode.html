@@ -1,35 +1,27 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    
-    <title>Instascan</title>
-    <script type="text/javascript" src="instascan.min.js" ></script>
-    <!--esses "link" foi adicionado ao codigo original-->
-    <link rel="stylesheet" type="text/css" href="resources/style/style.css" />
-    <link rel="manifest" href="manifest.json" />
-
-  </head>
-  <body>
-    <video id="preview"></video>
+    <head>
+        <script type="text/javascript" src="qrcode.js"></script>
+    </head>
+    <body>
+        <input type="text" id="valor" value="">
+        <button onClick="createQrCode()">Gerar QR Code</button>
+        <div id="qrcode"></div>
+    </body>
     <script>
-        let scanner = new Instascan.Scanner(
-            {
-                video: document.getElementById('preview')
-            }
-        );
-        scanner.addListener('scan', function(content) {
-            alert('Escaneou o conteudo: ' + content);
-            window.open(content, "_blank");
-        });
-        Instascan.Camera.getCameras().then(cameras => 
-        {
-            if(cameras.length > 0){
-                scanner.start(cameras[1]);
-            } else {
-                console.error("Não existe câmera no dispositivo!");
-            }
-        });
-    </script>
+    
+    function createQrCode()
+    {
+        var userInput = document.getElementById('valor').value;
 
- </body>
+        var qrcode = new QRCode("qrcode", {
+            text: userInput,
+            width: 256,
+            height: 256,
+            colorDark: "black",
+            colorLight: "white",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    }
+    
+    </script>
 </html>
