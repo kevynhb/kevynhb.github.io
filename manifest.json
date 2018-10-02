@@ -3,9 +3,9 @@
   "short_name": "Qrcode",
   "theme_color": "#2196f3",
   "background_color": "#21ebf3",
-  "display": "minimal-ui",
+  "display": "fullscreen",
   "orientation": "portrait",
-  "Scope": "/",
+  "Scope": "/https://kevynhb.github.io/qrcode.html",
   "start_url": "/https://kevynhb.github.io/qrcode.html",
   "icons": [
     {
