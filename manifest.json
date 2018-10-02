@@ -6,7 +6,7 @@
   "display": "minimal-ui",
   "orientation": "portrait",
   "Scope": "/",
-  "start_url": "/https://eloquent-khorana-24ae17.netlify.com/leitor-qrcode/qrcode.html",
+  "start_url": "/https://kevynhb.github.io/qrcode.html",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
