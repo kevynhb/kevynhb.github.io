@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
+    <head>
     
-    <title>Instascan</title>
-    <script type="text/javascript" src="instascan.min.js" ></script>
-    <!--esses "link" foi adicionado ao codigo original, para rodar manifest como 
-    icone na area de trabalho-->
-    <link rel="stylesheet" type="text/css" href="resources/style/style.css" />
-    <link rel="manifest" href="manifest.json" />
+        <title>Instascan</title>
 
-  </head>
-  <body>
-    <video id="preview"></video>
-    <script>
-        let scanner = new Instascan.Scanner(
-            {
-                video: document.getElementById('preview')
-            }
-        );
-        scanner.addListener('scan', function(content) {
-            alert('Escaneou o conteudo: ' + content);
-            window.open(content, "_blank");
-        });
-        Instascan.Camera.getCameras().then(cameras => 
-        {
-            if(cameras.length > 0){
-                scanner.start(cameras[0]);
-            } else {
-                console.error("Não existe câmera no dispositivo!");
-            }
-        });
-    </script>
+         <!--esses "link" foi adicionado ao codigo original, para rodar manifest como 
+            icone na area de trabalho-->
+        <link rel="stylesheet" type="text/css" href="resources/style/style.css" />
+        <link rel="manifest" href="manifest.json" />
 
- </body>
+        <!-- <style>
+            .button {
+                background-color: #4CAF50;
+                border: none;
+                color: rgb(255, 255, 255);
+                padding: 15px 25px;
+                text-align: center;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .button:hover {
+                background-colrgb(83, 117, 83)reen;
+            }
+        </style>
+    -->
+    </head>
+    <body>  
+
+        <!-- botão para ler qrcode -->
+        <a href="https://kevynhb.github.io/camera.html" target="_blank"> Qrcode</a> 
+       
+        <button type="button" onclick="alert('Leitor-Qrcode')">Ler Qrcode</button>
+    
+    </body>
+    
 </html>
