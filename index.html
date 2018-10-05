@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
     
-        <title>Instascan</title>
+    <title>Instascan</title>
+    <script type="text/javascript" src="instascan.min.js" ></script>
+    <!--esses "link" foi adicionado ao codigo original, para rodar manifest como 
+    icone na area de trabalho-->
+    <link rel="stylesheet" type="text/css" href="resources/style/style.css" />
+    <link rel="manifest" href="manifest.json" />
 
-         <!--esses "link" foi adicionado ao codigo original, para rodar manifest como 
-            icone na area de trabalho-->
-        <link rel="stylesheet" type="text/css" href="resources/style/style.css" />
-        <link rel="manifest" href="manifest.json" />
-
-         <style>
-            .button {
-                background-color: #4CAF50;
-                border: none;
-                color: rgb(255, 255, 255);
-                padding: 15px 25px;
-                text-align: center;
-                font-size: 16px;
-                cursor: pointer;
+  </head>
+  <body>
+    <video id="preview"></video>
+    <script>
+        let scanner = new Instascan.Scanner(
+            {
+                video: document.getElementById('preview')
             }
-
-            .button:hover {
-                background-colrgb(83, 117, 83)reen;
+        );
+        scanner.addListener('scan', function(content) {
+            alert('Escaneou o conteudo: ' + content);
+            window.open(content, "_blank");
+        });
+        Instascan.Camera.getCameras().then(cameras => 
+        {
+            if(cameras.length > 0){
+                scanner.start(cameras[0]);
+            } else {
+                console.error("Não existe câmera no dispositivo!");
             }
-        </style>
+        });
+    </script>
 
-    </head>
-    <body>  
-
-      <!--  <button class="button">Ler Qrcode</button> -->
-
-        <a href="https://kevynhb.github.io/camera.html" target="_blank"> Qrcode</a> 
-
-    </body>
-    
+ </body>
 </html>
