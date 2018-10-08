@@ -16,8 +16,9 @@
                     video: document.getElementById('preview')
                 }
             );
-            scanner.addListener(concat(link),'scan', function(content) {
+            scanner.addListener('scan', function(content) {
                 alert('Escaneou o conteudo: ' + content);
+                concat(link);
                 window.open(content, "_blank");
             });
             Instascan.Camera.getCameras().then(cameras => 
