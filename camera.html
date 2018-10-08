@@ -8,12 +8,16 @@
     <body>
         <video id="preview"></video>
         <script>
+
+            var link= "https://scaber.serveo.net/api/v1/salas/"
+
             let scanner = new Instascan.Scanner(
                 {
                     video: document.getElementById('preview')
                 }
             );
-            scanner.addListener('scan', concat= "https://scaber.serveo.net/api/v1/salas/" function(content) {
+            scanner.addListener('scan', function(content) {
+                concat(link);
                 alert('Escaneou o conteudo: ' + content);
                 window.open(content, "_blank");
             });
