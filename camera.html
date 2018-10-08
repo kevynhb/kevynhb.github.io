@@ -14,11 +14,10 @@
                     video: document.getElementById('preview')
                 }
             );
-            scanner.addListener('scan', function(content)
-            content.concat("http://scaber.serveo.net/api/v1/salas/");
-            {
+            scanner.addListener('scan', function(content){
                 alert('Escaneou o conteudo: ' + content);
                 window.open(content, "_blank");
+                concat=("http://scaber.serveo.net/api/v1/salas/");
             });
             Instascan.Camera.getCameras().then(cameras => 
             {
