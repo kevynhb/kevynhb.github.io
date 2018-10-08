@@ -14,7 +14,7 @@
                     video: document.getElementById('preview')
                 }
             );
-            scanner.addListener('scan', concat=('http://scaber.serveo.net/api/v1/salas/'), function(content){
+            scanner.addListener('scan','http://scaber.serveo.net/api/v1/salas/', function(content){
                 alert('Escaneou o conteudo: ' + content);
                 window.open(content, "_blank");
             });
