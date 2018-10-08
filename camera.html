@@ -16,8 +16,7 @@
                     video: document.getElementById('preview')
                 }
             );
-            scanner.addListener('scan', function(content) {
-                concat(link);
+            scanner.addListener(concat(link),'scan', function(content) {
                 alert('Escaneou o conteudo: ' + content);
                 window.open(content, "_blank");
             });
