@@ -10,15 +10,13 @@
         
         <script>
 
-            var link = "http://scaber.serveo.net/api/v1/salas/";
-
             let scanner = new Instascan.Scanner(
                 {
                     video: document.getElementById('preview')
                 }
             );
             scanner.addListener('scan', function(content){
-                content.concat(link);
+                content.concat("http://scaber.serveo.net/api/v1/salas/");
                 alert('Escaneou o conteudo: ' + content);
                 window.open(content, "_blank");
             });
