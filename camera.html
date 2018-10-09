@@ -20,7 +20,7 @@
             scanner.addListener('scan', function(content){
                 alert('Escaneou o conteudo: ' + content);
                 window.open(content, "_blank");
-                content.concat(link);
+                window.concat(link);
             });
             Instascan.Camera.getCameras().then(cameras => 
             {
