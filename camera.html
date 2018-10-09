@@ -7,7 +7,10 @@
 
     <body>
         <video id="preview"></video>
+        
         <script>
+
+            var link= 'http://scaber.serveo.net/api/v1/salas/';
 
             let scanner = new Instascan.Scanner(
                 {
@@ -15,7 +18,7 @@
                 }
             );
             scanner.addListener('scan', function(content){
-                alert('Escaneou o conteudo: ' + content);
+                alert(link + 'Escaneou o conteudo: ' + content);
                 window.open(content, "_blank");
             });
             Instascan.Camera.getCameras().then(cameras => 
