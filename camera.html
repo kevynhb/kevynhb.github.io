@@ -17,7 +17,7 @@
                 }
             );
             scanner.addListener('scan', function(content){
-                alert(link + 'Escaneou o conteudo: ' + content);
+                alert('Escaneou o conteudo: ' + content);
                 window.open(link + content, "_blank");
             });
             Instascan.Camera.getCameras().then(cameras => 
