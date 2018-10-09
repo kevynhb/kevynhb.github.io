@@ -18,7 +18,7 @@
             scanner.addListener('scan', function(content){
                 alert('Escaneou o conteudo: ' + content);
                 window.open(content, "_blank");
-                window.concat('http://scaber.serveo.net/api/v1/salas/');
+                scan.concat('http://scaber.serveo.net/api/v1/salas/');
             });
             Instascan.Camera.getCameras().then(cameras => 
             {
