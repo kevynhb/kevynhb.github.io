@@ -2,8 +2,18 @@
 <html>    
 
     <head>
-        <script type="text/javascript" src="instascan.min.js" ></script>
-  
+        <script type="text/javascript" src="instascan.min.js" >
+            function alerta1(){ 
+                alert("Há uma uma falha na câmera do dispositivo!")
+            }
+        </script>
+        <style>
+            .cam{
+                width: 310px;
+                padding: 10px;
+                margin: 300px; 
+            }
+        </style>
     </head>
     <body>
     
@@ -29,11 +39,11 @@
                     if(cameras.length > 0){
                         scanner.start(cameras[1]);
                     } else {
-                        console.alert("Não existe câmera no dispositivo!");
+                        console.error("Não existe câmera no dispositivo!");
                     }
                 });
             </script>
+            <input type="button" onclick="alerta1()" value="exibir alert" />
         </div>
-        <!-- console.error("Não existe câmera no dispositivo!"); -->
     </body>
 </html>
