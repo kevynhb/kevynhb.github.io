@@ -42,11 +42,11 @@
                 Instascan.Camera.getCameras().then(cameras => 
                 {
                     if(cameras.length > 0){
-                        scanner.start(cameras[1]);
+                        scanner.start(cameras[3]);
                     } else {
                         console.log(alert);
                     }
-                }).catch(function(mensagem()){
+                }).catch(function(err){
                     console.log(mensagem());
                 });
             </script>
