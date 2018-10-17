@@ -6,7 +6,7 @@
         
         <script>
             function mensagem(){ 
-                return alert("Há uma uma falha na câmera do dispositivo!");
+                alert("Há uma uma falha na câmera do dispositivo!");
             }
         </script>
 
@@ -44,7 +44,7 @@
                     if(cameras.length > 0){
                         scanner.start(cameras[2]);
                     } else {
-                        console.alert('erro na camera');
+                        console.alert(mensagem());
                     }
                 }).catch(function(err){
                     console.log(mensagem());
