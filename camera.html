@@ -44,6 +44,7 @@
                     if(cameras.length > 0){
                         scanner.start(cameras[1]);
                     } else {
+                        scanner.start(cameras[0]);
                         console.err(men());
                     }
                 }).catch(function (err) {
