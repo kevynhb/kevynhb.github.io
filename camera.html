@@ -41,14 +41,15 @@
                 });
                Instascan.Camera.getCameras().then(function (cameras) 
                 {
+                    console.log('mensagem 1');
                     if(cameras.length > 0){
-                        scanner.start(cameras[0]);
+                        scanner.start(cameras[1]);
+                        console.log('mensagem 2');
 
                     } else{
                         console.log('Erro na camera do dispositivo!!!');
+                        console.log('men 3');
                     }
-                }).catch(function (e) {
-                    console.error(e);
                 });
             </script>
         </div>
