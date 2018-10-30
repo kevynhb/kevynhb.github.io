@@ -3,13 +3,6 @@
 
     <head>
         <script type="text/javascript" src="instascan.min.js" ></script>
-        <!--
-        <script>
-            function men(){ 
-                alert("Há uma uma falha na câmera do dispositivo!");
-            }
-        </script>
-    -->
         <style>
             .cam{
                 width: 400px;
@@ -39,12 +32,10 @@
                     alert('Escaneou o conteudo: ' + content);
                     window.open(link + content, "_blank");
                 });
-               Instascan.Camera.getCameras().then(function (cameras) 
-                {
-                    console.log('mensagem 1');
+               Instascan.Camera.getCameras().then(function (cameras){
                     if(cameras.length > 0){
+                        scanner.start(cameras[0]);
                         scanner.start(cameras[1]);
-                        console.log('mensagem 2');
                     }else{
                         alert("erro na camera do dispositivo");
                     }
