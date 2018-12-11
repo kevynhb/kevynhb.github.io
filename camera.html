@@ -1,46 +1,46 @@
 <!DOCTYPE html>
-<html>    
+<html>
 
-    <head>
-        <script type="text/javascript" src="instascan.min.js" ></script>
-        <style>
-            .cam{
-                width: 400px;
-                padding: 10px;
-                margin: 300px;
-                border: 2px;
-            }
-        </style>
+<head>
+    <script type="text/javascript" src="instascan.min.js"></script>
+    <style>
+        .cam {
+            width: 400px;
+            padding: 10px;
+            margin: 300px;
+            border: 2px;
+        }
+    </style>
 
-    </head>
-    <body>
-    
-        <div class="cam">
-        
-            <video id="preview" style="width:auto"></video>
-        
-            <script>
-                
-                var link = "http://scaber.serveo.net/api/v1/salas/";
+</head>
 
-                let scanner = new Instascan.Scanner(
-                    {
-                        video: document.getElementById('preview')
-                    }
-                );
-                scanner.addListener('scan', function(content){
-                    alert('Escaneou o conteudo: ' + content);
-                    window.open(link + content, "_blank");
-                });
-               Instascan.Camera.getCameras().then(function (cameras){
-                    if(cameras.length > 0){
-                        scanner.start(cameras[1]);
-                        scanner.start(cameras[0]);
-                    }else{
-                        alert("erro na camera do dispositivo");
-                    }
-                });
-            </script>
-        </div>
-    </body>
+<body>
+
+    <div class="cam">
+
+        <video id="preview" style="width:auto"></video>
+
+        <script>
+            var link = "http://scaber.serveo.net/api/v1/salas/";
+
+            let scanner = new Instascan.Scanner({
+                video: document.getElementById('preview')
+            });
+            scanner.addListener('scan', function(content) {
+                alert('Escaneou o conteudo: ' + content);
+                window.open(link + content, "_blank");
+            });
+            Instascan.Camera.getCameras().then(function(cameras) {
+                if (cameras.length > 0) {
+                    scanner.start(cameras[0]);
+                    scanner.start(cameras[1]);
+                } else {
+                    console.error('No cameras found.');
+                    alert("erro na camera do dispositivo");
+                }
+            });
+        </script>
+    </div>
+</body>
+
 </html>
