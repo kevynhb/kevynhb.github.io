@@ -35,8 +35,9 @@
                     scanner.start(cameras[1]);
                 } else {
                     console.error('No cameras found.');
-                    alert("erro na camera do dispositivo");
                 }
+            }).catch(function(e) {
+                console.error(e);
             });
         </script>
     </div>
