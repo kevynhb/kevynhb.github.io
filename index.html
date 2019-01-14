@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Instascan</title>
 
-         <!--esses "link" foi adicionado ao codigo original, para rodar manifest como 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Instascan</title>
+
+    <!--esses "links" foi adicionado ao codigo original, para rodar manifest como 
             icone na area de trabalho-->
-        <link rel="stylesheet" type="text/css" href="resources/style/style.css" />
-        <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" type="text/css" href="resources/style/style.css" />
+    <link rel="manifest" href="manifest.json" />
 
-        <style>
-        *{
+    <style>
+        * {
             margin: 0;
             padding: 0;
             text-decoration: none;
             border: 0;
         }
-
+        
         .btn {
             background-color: #00a846;
             padding: 10px 20px;
@@ -29,49 +30,59 @@
             margin-top: 100px;
             box-shadow: #ccc 1px 2px 10px;
         }
+        
         .btn:hover {
-            background-color: #0d7e3c; 
+            background-color: #0d7e3c;
             box-shadow: #ccc 2px 2px 10px;
-       }
-       .content{
+        }
+        
+        .content {
             text-align: center;
             display: flex;
             justify-content: center;
             background-color: rgb(235, 233, 233);
             width: 100%;
             height: 100vh;
-        } 
+        }
+        
         .texto-central {
             width: 100%;
             height: 10vh;
             margin-top: 35vh;
             color: #0d7e3c;
         }
-        #titulo1{
+        
+        #titulo1 {
             color: #008000;
-            
         }
-        h2{
+        
+        h2 {
             color: #57d357;
             text-align: center;
         }
     </style>
 
-    </head>
-    <body> 
- 
-        <div class="content" style="background-color: rgb(228, 228, 228)">
-            <div class="texto-central">
+</head>
 
-                <h1 id="titulo1">Ensalamento</h1>
-                <h2>Leia o código da sala para obter as informações da mesma!</p></h2>
+<body>
 
-                <!-- botão para ler qrcode-->
-                <a href="https://kevynhb.github.io/camera.html">
+    <div class="content" style="background-color: rgb(228, 228, 228)">
+        <div class="texto-central">
+
+            <h1 id="titulo1">Ensalamento</h1>
+            <h2>Leia o código da sala para obter as informações da mesma!</p>
+            </h2>
+
+            <!-- botão para ler qrcode-->
+            <a href="https://kevynhb.github.io/camera.html">
                 <button class="btn">LER QRCODE</button>
-                </a>
-            </div>  
+            </a>
+
+            <a href="https://kevynhb.github.io/avaliacao.html">
+                <button id="nota" class="btn">Avaliar</button>
+            </a>
         </div>
-    </body>
-    
+    </div>
+</body>
+
 </html>
