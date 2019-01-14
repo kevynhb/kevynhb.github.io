@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Camêra</title>
 <head>
-    <script type="text/javascript" src="instascan.min.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+    <script type="text/javascript" src="instascan.min.js" ></script>
     <style>
         .cam {
             width: 400px;
@@ -24,14 +25,17 @@
         <script>
             var link = "http://scaber.serveo.net/api/v1/salas/";
 
-            let scanner = new Instascan.Scanner({
+            let scanner = new Instascan.Scanner(
+            {
                 video: document.getElementById('preview')
             });
-            scanner.addListener('scan', function(content) {
+            scanner.addListener('scan', function(content) 
+            {
                 alert('Escaneou o conteudo: ' + content);
                 window.open(link + content, "_blank");
             });
-            Instascan.Camera.getCameras().then(cameras => {
+            Instascan.Camera.getCameras().then(cameras =>
+            {
                 if (cameras.length > 0) {
                     scanner.start(cameras[0]);
                 } else {
