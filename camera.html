@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Camêra</title>
-    <script type="text/javascript" src="instascan.min.js" ></script>
+    
     <script type="text/javascript" src="qrcode.js" ></script> <!--adicionado-->
    
     <style>
@@ -18,6 +18,8 @@
 </head>
 
 <body>
+    <script src="instascan.min.js" ></script>
+
     <div class="cam">
 
         <video id="preview"></video>  <!--retirei do codigo: style="width:auto"-->
@@ -25,13 +27,13 @@
         <script>
             var link = "http://scaber.serveo.net/api/v1/salas/";
 
-            let scanner = new Instascan.Scanner({
+            const scanner = new Instascan.Scanner({
                 video: document.getElementById('preview')
-            });
+            })
             scanner.addListener('scan', function(content){
                 alert('Escaneou o conteudo: ' + content);
                 window.open(link + content, "_blank");
-            });
+            })
             Instascan.Camera.getCameras().then(cameras =>
             {
                 if (cameras.length > 0) {
@@ -39,7 +41,7 @@
                 } else {
                     console.error('No cameras found.');
                 }
-            });
+            })
         </script>
     </div>
 </body>
